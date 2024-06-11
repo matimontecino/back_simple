@@ -1,0 +1,43 @@
+@login = http://localhost:3000/user/login
+@sigup = http://localhost:3000/user/usersp
+@public = http://localhost:3000/user/public
+@private = http://localhost:3000/user/private
+@token = http://localhost:3000/user/token
+@productos = http://localhost:3000/products/getAll
+POST  {{login}}
+Content-Type: application/json
+
+{
+    "user" : "pepito",
+    "username" : "pepito rock"
+}
+
+###
+GET {{productos}}
+auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXBpdG8iLCJ1c2VybmFtZSI6InBlcGl0byByb2NrIiwiaWF0IjoxNzE2ODk2NjcwLCJleHAiOjE3MTY4OTY5NzB9.MZHn43x7BtEkRYrcxa3BDZhw-TMPqaBI09P83scYXaU
+
+### 
+POST {{public}}
+
+### 
+GET {{private}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNTI1Iiwibm9tYnJlIjoianVhbiIsImlhdCI6MTcxNTA1MTMxN30.XeacZLmYv4BtynEmtPrpl0wI1d2nCZpj5hnEkuBPmkU
+
+###
+POST {{token}}
+Content-Type: application/json
+
+{
+    "dni" : "2525",
+    "nombre": "juan"
+}
+###
+POST {{sigup}}
+Content-Type: application/json
+
+{
+ "nombre": "juan",
+ "dni": "00019"
+}
+
+#eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXBpdG8iLCJ1c2VybmFtZSI6InBlcGl0byByb2NrIiwiaWF0IjoxNzE1OTE4NDE1LCJleHAiOjE3MTU5MTg3MTV9.EPOuZvW1CczTYOsjP_L1K8SvqvJOCJtQO73EVDA2lmU
